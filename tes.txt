@@ -1,0 +1,31 @@
+ <form action="" method="post">
+                        <div class="search-box">
+                            <i class="material-icons">&#xE8B6;</i>
+                            <input type="text" class="form-control" placeholder="Search&hellip;" name="keyword" id="keyword">
+                        </div>
+
+
+
+
+                     <tr>
+                        <th>id</th>
+                        <th>Nama <i class="fa fa-sort"></i></th>
+                        <th>Kelas</th>
+                        <th>Jurusan <i class="fa fa-sort"></i></th>
+                        <th>Buku </th>
+                        <th>Actions</th>
+                    </tr>
+        
+                  <?php $a = 1; ?>
+                     <?php foreach ($pinjam as $pjm) :?>
+                        <tr>
+                            <td><?php echo $a; ?></td>
+                            <td><?php echo $pjm["nama"]; ?></td>
+                            <td><?php echo $pjm["kelas"]; ?></td>
+                            <td><?php echo $pjm["jurusan"]; ?></td>
+                            <td><?php echo $pjm["buku"]; ?></td>
+                            <td><a href="ubah.php?id=<?php echo $pjm["id"]; ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> <a href="hapus.php?id=<?php echo $pjm["id"]; ?>" class="delete" title="Delete" data-toggle="tooltip" onclick=" return confirm('Apakah yakin mau menghapus?')"><i class="material-icons">&#xE872;</i></a>  
+                            </td>
+                        </tr>
+                            <?php $a++; ?>
+                          <?php endforeach ?>
